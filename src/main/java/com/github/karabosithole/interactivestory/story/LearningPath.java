@@ -6,10 +6,28 @@ package com.github.karabosithole.interactivestory.story;
  * It helps structure how users progress through the narrative.
  */
 
+import java.util.List;
+
 public class LearningPath {
+    private String id;
+    private List<String> nodes;
+
+    // Getters and setters
+
     public String getId() {
-    return null;
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public List<String> getNodes() {
+        return nodes;
+    }
+
+    public void setNodes(List<String> nodes) {
+        this.nodes = nodes;
+    }
 }
+

@@ -2,50 +2,80 @@ package com.github.karabosithole.interactivestory.game;
 
 
 import com.github.karabosithole.interactivestory.story.Choice;
+import com.github.karabosithole.interactivestory.story.Story;
 import com.github.karabosithole.interactivestory.story.StoryNode;
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
 
 /**Game.java: Main class for your game logic.
  * It manages the overall game flow, interacts with users,
  * and coordinates different game components.
 */
 
+import java.io.InputStream;
+import java.util.List;
+import java.util.Scanner;
+
 public class Game {
-    public static void main(String[] args) {
-        // Define story nodes
-        StoryNode startNode = new StoryNode("You find yourself in a mysterious room.");
+    private Story story;
+    private StoryNode currentNode;
 
-        StoryNode middleNode = new StoryNode("As you explore further, you discover two doors.");
-        startNode.addChoice(new Choice("Enter the left door", middleNode));
+    public Game(Story story) {
+        this.story = story;
+        this.currentNode = findNodeById("start");
+    }
 
-        StoryNode endNode1 = new StoryNode("You find a treasure chest!");
-        middleNode.addChoice(new Choice("Open the chest", endNode1));
+    public void start() {
+        Scanner scanner = new Scanner(System.in);
 
-        StoryNode endNode2 = new StoryNode("The room collapses!");
-        middleNode.addChoice(new Choice("Enter the right door", endNode2));
-
-        // Simulate the game loop (console-based)
-        StoryNode currentNode = startNode;
         while (currentNode != null) {
-            System.out.println(currentNode.getText());
-
-            if (currentNode.getChoices().isEmpty()) {
-                System.out.println("Game Over!");
+            displayCurrentNode();
+            if (currentNode.getChoices() == null || currentNode.getChoices().isEmpty()) {
+                System.out.println("The end.");
                 break;
             }
 
-            System.out.println("Choices:");
-            for (int i = 0; i < currentNode.getChoices().size(); i++) {
-                System.out.println((i + 1) + ". " + currentNode.getChoices().get(i).getText());
-            }
+            int choice = getUserChoice(scanner);
+            currentNode = findNodeById(currentNode.getChoices().get(choice - 1).getNextNodeId());
+        }
 
-            // Simulate user input (for demonstration, input is hardcoded)
-            int choiceIndex = 0; // replace with actual user input mechanism
-            if (choiceIndex >= 1 && choiceIndex <= currentNode.getChoices().size()) {
-                Choice chosenChoice = currentNode.getChoices().get(choiceIndex - 1);
-                currentNode = chosenChoice.getNextNode();
-            } else {
-                System.out.println("Invalid choice, please choose again.");
+        scanner.close();
+    }
+
+    private void displayCurrentNode() {
+        System.out.println(currentNode.getDescription());
+        if (currentNode.getChoices() != null && !currentNode.getChoices().isEmpty()) {
+            for (int i = 0; i < currentNode.getChoices().size(); i++) {
+                System.out.println((i + 1) + ": " + currentNode.getChoices().get(i).getText());
             }
         }
     }
+
+    private int getUserChoice(Scanner scanner) {
+        int choice = -1;
+        while (choice < 1 || choice > currentNode.getChoices().size()) {
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+        }
+        return choice;
+    }
+
+    private StoryNode findNodeById(String nodeId) {
+        for (StoryNode node : story.getNodes()) {
+            if (node.getId().equals(nodeId)) {
+                return node;
+            }
+        }
+        return null; // Or handle it appropriately
+    }
+
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml(new Constructor(Story.class));
+        InputStream inputStream = Game.class.getClassLoader().getResourceAsStream("story.yaml");
+        Story story = yaml.load(inputStream);
+
+        Game game = new Game(story);
+        game.start();
+    }
 }
+

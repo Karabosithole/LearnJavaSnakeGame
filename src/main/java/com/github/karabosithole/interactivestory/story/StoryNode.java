@@ -10,33 +10,72 @@ package com.github.karabosithole.interactivestory.story;
  */
 
 
+import org.yaml.snakeyaml.nodes.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
     public class StoryNode {
-        private String text;
+        private String id;
+        private String description;
+        private String questionId;
         private List<Choice> choices;
-        private String Id;
 
-        public StoryNode(String text) {
-            this.text = text;
-            this.choices = new ArrayList<>();
+        // Getters and setters
+
+        public String getId() {
+            return id;
         }
 
-        public String getText() {
-            return text;
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public String getQuestionId() {
+            return questionId;
+        }
+
+        public void setQuestionId(String questionId) {
+            this.questionId = questionId;
         }
 
         public List<Choice> getChoices() {
             return choices;
         }
 
-        public void addChoice(Choice choice) {
-            choices.add(choice);
+        public void setChoices(List<Choice> choices) {
+            this.choices = choices;
         }
 
-        public String getId() {
-            return this.Id;
+        public static class Choice {
+            private String text;
+            private String nextNodeId;
+
+            // Getters and setters
+
+            public String getText() {
+                return text;
+            }
+
+            public void setText(String text) {
+                this.text = text;
+            }
+
+            public String getNextNodeId() {
+                return nextNodeId;
+            }
+
+            public void setNextNodeId(String nextNodeId) {
+                this.nextNodeId = nextNodeId;
+            }
         }
     }
 
