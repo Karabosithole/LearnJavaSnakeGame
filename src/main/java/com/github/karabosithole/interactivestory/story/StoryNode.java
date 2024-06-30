@@ -1,6 +1,5 @@
 package com.github.karabosithole.interactivestory.story;
 
-
 /**StoryNode Class:
  *Purpose: The StoryNode class represents individual nodes or points the interactive story.
  *Each StoryNode encapsulates information about a specific narrative point,
@@ -10,5 +9,35 @@ package com.github.karabosithole.interactivestory.story;
  *Provide methods to retrieve and manipulate this information.
  */
 
-public class StoryNode {
-}
+
+import java.util.ArrayList;
+import java.util.List;
+
+    public class StoryNode {
+        private String text;
+        private List<Choice> choices;
+        private String Id;
+
+        public StoryNode(String text) {
+            this.text = text;
+            this.choices = new ArrayList<>();
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public List<Choice> getChoices() {
+            return choices;
+        }
+
+        public void addChoice(Choice choice) {
+            choices.add(choice);
+        }
+
+        public String getId() {
+            return this.Id;
+        }
+    }
+
+
