@@ -16,6 +16,19 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Scanner;
 
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
+
+import java.io.InputStream;
+import java.util.List;
+import java.util.Scanner;
+
+import java.util.List;
+import java.util.Scanner;
+
+import java.util.List;
+import java.util.Scanner;
+
 public class Game {
     private Story story;
     private StoryNode currentNode;
@@ -68,14 +81,4 @@ public class Game {
         }
         return null; // Or handle it appropriately
     }
-
-    public static void main(String[] args) {
-        Yaml yaml = new Yaml(new Constructor(Story.class));
-        InputStream inputStream = Game.class.getClassLoader().getResourceAsStream("story.yaml");
-        Story story = yaml.load(inputStream);
-
-        Game game = new Game(story);
-        game.start();
-    }
 }
-

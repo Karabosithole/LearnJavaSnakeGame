@@ -1,0 +1,50 @@
+nodes:
+  - id: "start"
+    description: "You wake up in a mysterious forest. What do you do?"
+    choices:
+      - text: "Explore the forest"
+        nextNodeId: "explore_forest"
+      - text: "Stay where you are"
+        nextNodeId: "stay_put"
+  - id: "explore_forest"
+    description: "You find a hidden path leading to a cave. Before you enter, solve this coding challenge:"
+    questionId: "java_variable_question"
+    choices:
+      - text: "Enter the cave"
+        nextNodeId: "enter_cave"
+      - text: "Go back"
+        nextNodeId: "start"
+  - id: "stay_put"
+    description: "You decide to stay put and wait. Time passes by. While waiting, solve this coding challenge:"
+    questionId: "java_loop_question"
+    choices:
+      - text: "Wait longer"
+        nextNodeId: "wait_longer"
+      - text: "Change your mind and explore"
+        nextNodeId: "explore_forest"
+  - id: "enter_cave"
+    description: "You bravely enter the cave, encountering new challenges."
+    choices:
+      - text: "Proceed deeper"
+        nextNodeId: "cave_depths"
+      - text: "Go back"
+        nextNodeId: "explore_forest"
+  - id: "wait_longer"
+    description: "Time continues to pass as you wait. While waiting, solve another coding challenge:"
+    questionId: "java_array_question"
+    choices:
+      - text: "Keep waiting"
+        nextNodeId: "wait_even_longer"
+      - text: "Change your mind and explore"
+        nextNodeId: "explore_forest"
+learningPaths:
+  - id: "path_to_cave"
+    nodes:
+      - "start"
+      - "explore_forest"
+      - "enter_cave"
+  - id: "path_to_waiting"
+    nodes:
+      - "start"
+      - "stay_put"
+      - "wait_longer"

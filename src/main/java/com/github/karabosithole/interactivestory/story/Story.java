@@ -18,8 +18,9 @@ import java.util.Map;
  Handle interactions between different story nodes and manage the current state of the story.
  */
 
-public class Story {
+import java.util.List;
 
+public class Story {
     private List<StoryNode> nodes;
     private List<LearningPath> learningPaths;
 
@@ -40,5 +41,4 @@ public class Story {
     public void setLearningPaths(List<LearningPath> learningPaths) {
         this.learningPaths = learningPaths;
     }
-
 }

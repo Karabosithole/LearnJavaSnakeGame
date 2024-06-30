@@ -8,6 +8,7 @@ package com.github.karabosithole.interactivestory.story;
 
 import java.util.List;
 
+
 public class LearningPath {
     private String id;
     private List<String> nodes;
@@ -30,4 +31,3 @@ public class LearningPath {
         this.nodes = nodes;
     }
 }
-

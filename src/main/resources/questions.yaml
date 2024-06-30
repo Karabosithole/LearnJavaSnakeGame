@@ -1,0 +1,30 @@
+questions:
+  - id: "java_variable_question"
+    text: "Which of the following correctly declares an integer variable in Java?"
+    choices:
+      - text: "int number = 5;"
+        correct: true
+      - text: "var number = '5';"
+        correct: false
+      - text: "integer number = 5;"
+        correct: false
+
+  - id: "java_loop_question"
+    text: "What is the output of the following code snippet?\n```java\nfor(int i = 0; i < 3; i++) {\n  System.out.println(i);\n}\n```"
+    choices:
+      - text: "0 1 2"
+        correct: true
+      - text: "1 2 3"
+        correct: false
+      - text: "0 1 2 3"
+        correct: false
+
+  - id: "java_array_question"
+    text: "How do you declare an array of integers in Java?"
+    choices:
+      - text: "int[] numbers = {1, 2, 3};"
+        correct: true
+      - text: "int numbers = [1, 2, 3];"
+        correct: false
+      - text: "array int numbers = {1, 2, 3};"
+        correct: false
