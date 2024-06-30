@@ -38,7 +38,8 @@ story:
         - text: "Enter the cave"
           nextNodeId: "enter_cave"
         - text: "Go back"
-          nextNodeId: "start"
+```
+
 
 ### 2. questions.yaml
 
@@ -51,7 +52,7 @@ This file contains the questions that are used to test the player's knowledge of
     - `text`: The text of the question.
     - `choices`: A list of possible answers.
         - `text`: The text of the choice.
-        - `correct`: A boolean indicating if this choice is correct.
+        - `correct`: A boolean indicating if this choice is correct. 
 
 #### Example
 
@@ -66,6 +67,7 @@ questions:
         correct: false
       - text: "integer number = 5;"
         correct: false
+   ```
 
 ## Purpose
 
