@@ -1,0 +1,35 @@
+story:
+  nodes:
+    - id: "start"
+      description: "Welcome to your Java learning adventure! What do you want to learn first?"
+      choices:
+        - text: "Learn about variables"
+          nextNodeId: "variables_intro"
+        - text: "Learn about loops"
+          nextNodeId: "loops_intro"
+
+    - id: "variables_intro"
+      description: "Variables are used to store data. What type of variable do you want to learn about?"
+      choices:
+        - text: "Integers"
+          nextNodeId: "integers"
+        - text: "Strings"
+          nextNodeId: "strings"
+
+    - id: "integers"
+      description: "Integers are whole numbers. Let's see how much you know."
+      choices:
+        - text: "Answer a question about integers"
+          nextNodeId: "integer_question"
+        - text: "Go back"
+          nextNodeId: "variables_intro"
+
+    - id: "integer_question"
+      description: "What is the correct way to declare an integer variable?"
+      choices:
+        - text: "int x = 10;"
+          correct: true
+          nextNodeId: "variables_intro"
+        - text: "String x = '10';"
+          correct: false
+          nextNodeId: "variables_intro"
