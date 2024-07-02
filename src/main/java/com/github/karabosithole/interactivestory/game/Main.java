@@ -1,7 +1,7 @@
 package com.github.karabosithole.interactivestory.game;
 
 /**Main.java:
- * Entry point of your application.
+ * Entry point of the application.
  * It initializes necessary components and starts the game.
 */
 

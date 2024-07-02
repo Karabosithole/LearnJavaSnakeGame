@@ -7,25 +7,16 @@ import com.github.karabosithole.interactivestory.story.StoryNode;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
-/**Game.java: Main class for your game logic.
+/**Game.java: Main class the game logic.
  * It manages the overall game flow, interacts with users,
  * and coordinates different game components.
 */
 
-import java.io.InputStream;
-import java.util.List;
-import java.util.Scanner;
 
+import java.util.Scanner;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
-
 import java.io.InputStream;
-import java.util.List;
-import java.util.Scanner;
-
-import java.util.List;
-import java.util.Scanner;
-
 import java.util.List;
 import java.util.Scanner;
 
