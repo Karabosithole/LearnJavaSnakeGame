@@ -5,15 +5,13 @@ package com.github.karabosithole.interactivestory.story;
  *  narrative arc through your story.
  * It helps structure how users progress through the narrative.
  */
-
 import java.util.List;
-
 
 public class LearningPath {
     private String id;
     private List<String> nodes;
 
-    // Getters and setters
+    // Getters and Setters
 
     public String getId() {
         return id;

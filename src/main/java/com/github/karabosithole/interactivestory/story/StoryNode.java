@@ -10,19 +10,15 @@ package com.github.karabosithole.interactivestory.story;
  */
 
 
-import org.yaml.snakeyaml.nodes.Node;
-
-import java.util.ArrayList;
 import java.util.List;
-
 
 public class StoryNode {
     private String id;
     private String description;
-    private String questionId;
     private List<Choice> choices;
+    private String questionId;
 
-    // Getters and setters
+    // Getters and Setters
 
     public String getId() {
         return id;
@@ -40,14 +36,6 @@ public class StoryNode {
         this.description = description;
     }
 
-    public String getQuestionId() {
-        return questionId;
-    }
-
-    public void setQuestionId(String questionId) {
-        this.questionId = questionId;
-    }
-
     public List<Choice> getChoices() {
         return choices;
     }
@@ -56,26 +44,11 @@ public class StoryNode {
         this.choices = choices;
     }
 
-    public static class Choice {
-        private String text;
-        private String nextNodeId;
+    public String getQuestionId() {
+        return questionId;
+    }
 
-        // Getters and setters
-
-        public String getText() {
-            return text;
-        }
-
-        public void setText(String text) {
-            this.text = text;
-        }
-
-        public String getNextNodeId() {
-            return nextNodeId;
-        }
-
-        public void setNextNodeId(String nextNodeId) {
-            this.nextNodeId = nextNodeId;
-        }
+    public void setQuestionId(String questionId) {
+        this.questionId = questionId;
     }
 }

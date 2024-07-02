@@ -21,24 +21,7 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
-        Yaml yaml = new Yaml(new Constructor(Story.class));
-        InputStream inputStream = null;
-        try {
-            inputStream = Files.newInputStream(Paths.get(Main.class.getClassLoader().getResource("story.yaml").toURI()));
-            Story story = yaml.load(inputStream);
-            Game game = new Game(story);
-            game.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        Game game = new Game();
+        game.start();
     }
 }
-
