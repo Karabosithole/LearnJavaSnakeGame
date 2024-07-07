@@ -6,6 +6,7 @@ package com.github.karabosithole.interactivestory.game;
 */
 
 import com.github.karabosithole.interactivestory.story.Story;
+import com.github.karabosithole.interactivestory.ui.ConsoleUI;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 

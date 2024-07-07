@@ -1,0 +1,27 @@
+text: "You are in a dark forest. You see two paths ahead."
+choices:
+  - text: "Take the left path"
+    nextNode:
+      text: "You encounter a wild animal. What do you do?"
+      choices:
+        - text: "Fight the animal"
+          nextNode:
+            text: "You have defeated the animal. You win!"
+            endNode: true
+        - text: "Run away"
+          nextNode:
+            text: "You have successfully escaped. You win!"
+            endNode: true
+  - text: "Take the right path"
+    nextNode:
+      text: "You find a treasure chest. What do you do?"
+      choices:
+        - text: "Open the chest"
+          nextNode:
+            text: "The chest is full of gold. You win!"
+            endNode: true
+        - text: "Ignore the chest"
+          nextNode:
+            text: "You continue on your journey and find a peaceful village. You win!"
+            endNode: true
+endNode: false

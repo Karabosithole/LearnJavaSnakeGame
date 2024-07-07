@@ -6,24 +6,21 @@ package com.github.karabosithole.interactivestory.ui;
 
 import com.github.karabosithole.interactivestory.question.Question;
 import com.github.karabosithole.interactivestory.story.Choice;
+import com.github.karabosithole.interactivestory.story.StoryNode;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUI implements UserInterface {
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
-    @Override
-    public void displayStory(String story) {
-        System.out.println(story);
+    public ConsoleUI() {
+        this.scanner = new Scanner(System.in);
     }
 
     @Override
-    public void displayQuestion(Question question) {
-        System.out.println(question.getText());
-        for (int i = 0; i < question.getChoices().size(); i++) {
-            System.out.println((i + 1) + ". " + question.getChoices().get(i).getText());
-        }
+    public void displayText(String text) {
+        System.out.println(text);
     }
 
     @Override
@@ -34,7 +31,12 @@ public class ConsoleUI implements UserInterface {
     }
 
     @Override
-    public String getUserInput() {
-        return scanner.nextLine();
+    public int getChoice(int numChoices) {
+        int choice = -1;
+        while (choice < 1 || choice > numChoices) {
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+        }
+        return choice - 1;
     }
 }

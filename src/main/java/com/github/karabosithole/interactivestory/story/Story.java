@@ -20,13 +20,33 @@ import java.util.Map;
  Handle interactions between different story nodes and manage the current state of the story.
  */
 
-
-
 public class Story {
+
     private List<StoryNode> nodes;
     private List<LearningPath> learningPaths;
 
     // Getters and setters
+//    public List<StoryNode> getNodes() {
+//        return nodes;
+//    }
+
+//    public void setNodes(List<StoryNode> nodes) {
+//        this.nodes = nodes;
+//    }
+//
+//    public List<LearningPath> getLearningPaths() {
+//        return learningPaths;
+//    }
+//
+//    public void setLearningPaths(List<LearningPath> learningPaths) {
+//        this.learningPaths = learningPaths;
+//    }
+
+//    // Method to load story data from a YAML file
+//    public static Story loadFromYaml(String storyDataFile) throws IOException {
+//        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+//        return mapper.readValue(new File(storyDataFile), Story.class);
+//    }
 
     public List<StoryNode> getNodes() {
         return nodes;
@@ -42,5 +62,10 @@ public class Story {
 
     public void setLearningPaths(List<LearningPath> learningPaths) {
         this.learningPaths = learningPaths;
+    }
+
+    public static Story loadFromYaml(String filePath) throws IOException {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        return mapper.readValue(new File(filePath), Story.class);
     }
 }

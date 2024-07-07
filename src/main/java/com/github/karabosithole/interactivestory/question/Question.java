@@ -8,19 +8,10 @@ package com.github.karabosithole.interactivestory.question;
 import java.util.List;
 
 public class Question {
-    private String id;
     private String text;
-    private List<Choice> choices;
+    private String answer;
 
-    // Getters and Setters
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    // Getters and setters
 
     public String getText() {
         return text;
@@ -30,34 +21,11 @@ public class Question {
         this.text = text;
     }
 
-    public List<Choice> getChoices() {
-        return choices;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setChoices(List<Choice> choices) {
-        this.choices = choices;
-    }
-
-    public static class Choice {
-        private String text;
-        private boolean correct;
-
-        // Getters and Setters
-
-        public String getText() {
-            return text;
-        }
-
-        public void setText(String text) {
-            this.text = text;
-        }
-
-        public boolean isCorrect() {
-            return correct;
-        }
-
-        public void setCorrect(boolean correct) {
-            this.correct = correct;
-        }
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

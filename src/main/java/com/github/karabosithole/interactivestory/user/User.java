@@ -3,17 +3,17 @@ package com.github.karabosithole.interactivestory.user;
  * holds user-specific data.
 */
 public class User {
-    private String currentNode;
+    private String name;
     private int score;
 
-    // Getters and Setters
+    // Getters and setters
 
-    public String getCurrentNode() {
-        return currentNode;
+    public String getName() {
+        return name;
     }
 
-    public void setCurrentNode(String currentNode) {
-        this.currentNode = currentNode;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getScore() {
@@ -23,6 +23,4 @@ public class User {
     public void setScore(int score) {
         this.score = score;
     }
-
-    // Method to update user's state
 }

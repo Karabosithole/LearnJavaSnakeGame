@@ -6,9 +6,9 @@ defining where the user navigates next.
 
 public class Choice {
     private String text;
-    private String nextNodeId;
+    private StoryNode nextNode;
 
-    // Getters and Setters
+    // Getters and setters
 
     public String getText() {
         return text;
@@ -18,11 +18,11 @@ public class Choice {
         this.text = text;
     }
 
-    public String getNextNodeId() {
-        return nextNodeId;
+    public StoryNode getNextNode() {
+        return nextNode;
     }
 
-    public void setNextNodeId(String nextNodeId) {
-        this.nextNodeId = nextNodeId;
+    public void setNextNode(StoryNode nextNode) {
+        this.nextNode = nextNode;
     }
 }

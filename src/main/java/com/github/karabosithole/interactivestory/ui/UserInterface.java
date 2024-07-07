@@ -9,15 +9,12 @@ package com.github.karabosithole.interactivestory.ui;
 
 import com.github.karabosithole.interactivestory.question.Question;
 import com.github.karabosithole.interactivestory.story.Choice;
+import com.github.karabosithole.interactivestory.story.StoryNode;
 
 import java.util.List;
 
 public interface UserInterface {
-    void displayStory(String story);
-
-    void displayQuestion(Question question);
-
+    void displayText(String text);
     void displayChoices(List<Choice> choices);
-
-    String getUserInput();
+    int getChoice(int numChoices);
 }
