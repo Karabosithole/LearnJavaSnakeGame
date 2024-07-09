@@ -21,8 +21,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Main {
-    public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
-    }
+//    public static void main(String[] args) {
+//        Game game = new Game();
+//        game.start();
+//    }
 }
