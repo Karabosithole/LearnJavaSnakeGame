@@ -5,17 +5,24 @@ package com.github.karabosithole.interactivestory.story;
  *  narrative arc through your story.
  * It helps structure how users progress through the narrative.
  */
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 public class LearningPath {
-    private List<StoryNode> pathNodes;
+    private StoryNode startNode;
 
-    // Getters and setters
-
-    public List<StoryNode> getPathNodes() {
-        return pathNodes;
+    public LearningPath(String filePath) {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        try {
+            startNode = mapper.readValue(new File(filePath), StoryNode.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void setPathNodes(List<StoryNode> pathNodes) {
-        this.pathNodes = pathNodes;
-    }
-}
+    public StoryNode getStartNode() {
+        return startNode;
+    }}

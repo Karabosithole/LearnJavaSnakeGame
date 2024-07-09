@@ -13,8 +13,10 @@ import com.github.karabosithole.interactivestory.story.StoryNode;
 
 import java.util.List;
 
+
+
 public interface UserInterface {
-    void displayText(String text);
-    void displayChoices(List<Choice> choices);
-    int getChoice(int numChoices);
+    void displayMessage(String message);
+    boolean askQuestion(Question question);
+    int getUserChoice(List<Choice> choices);
 }

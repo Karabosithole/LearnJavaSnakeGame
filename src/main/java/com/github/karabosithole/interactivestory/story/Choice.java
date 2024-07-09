@@ -5,10 +5,17 @@ defining where the user navigates next.
  */
 
 public class Choice {
+    private String description;
     private String text;
     private StoryNode nextNode;
 
-    // Getters and setters
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getText() {
         return text;

@@ -13,23 +13,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.util.List;
+
 public class QuestionBank {
     private List<Question> questions;
 
-    public QuestionBank() {
-        loadQuestions();
-    }
-
-    private void loadQuestions() {
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        try {
-            questions = mapper.readValue(new File("src/main/resources/questions.yaml"), List.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Getters and setters
+    // Getter and setter
 
     public List<Question> getQuestions() {
         return questions;
@@ -37,5 +26,14 @@ public class QuestionBank {
 
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
+    }
+
+    public Question getQuestionById(String id) {
+        for (Question question : questions) {
+            if (question.getId().equals(id)) {
+                return question;
+            }
+        }
+        return null;
     }
 }

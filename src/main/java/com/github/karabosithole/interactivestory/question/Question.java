@@ -8,10 +8,19 @@ package com.github.karabosithole.interactivestory.question;
 import java.util.List;
 
 public class Question {
+    private String id;
     private String text;
     private String answer;
 
     // Getters and setters
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getText() {
         return text;

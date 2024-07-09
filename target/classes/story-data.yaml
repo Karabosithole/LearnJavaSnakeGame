@@ -1,27 +1,39 @@
-text: "You are in a dark forest. You see two paths ahead."
+id: "start"
+text: "You are in a forest. Do you go left or right?"
 choices:
-  - text: "Take the left path"
+  - description: "Go left"
+    text: "Go left"
     nextNode:
-      text: "You encounter a wild animal. What do you do?"
+      id: "left"
+      text: "You went left. You see a river. Do you swim across or walk along the river?"
       choices:
-        - text: "Fight the animal"
+        - description: "Swim across"
+          text: "Swim across"
           nextNode:
-            text: "You have defeated the animal. You win!"
-            endNode: true
-        - text: "Run away"
+            id: "swim"
+            text: "You swam across the river. You find a treasure chest."
+            choices: []
+        - description: "Walk along the river"
+          text: "Walk along the river"
           nextNode:
-            text: "You have successfully escaped. You win!"
-            endNode: true
-  - text: "Take the right path"
+            id: "walk"
+            text: "You walked along the river and found a bridge to cross safely."
+            choices: []
+  - description: "Go right"
+    text: "Go right"
     nextNode:
-      text: "You find a treasure chest. What do you do?"
+      id: "right"
+      text: "You went right. You see a mountain. Do you climb it or walk around it?"
       choices:
-        - text: "Open the chest"
+        - description: "Climb the mountain"
+          text: "Climb the mountain"
           nextNode:
-            text: "The chest is full of gold. You win!"
-            endNode: true
-        - text: "Ignore the chest"
+            id: "climb"
+            text: "You climbed the mountain and found a beautiful view."
+            choices: []
+        - description: "Walk around the mountain"
+          text: "Walk around the mountain"
           nextNode:
-            text: "You continue on your journey and find a peaceful village. You win!"
-            endNode: true
-endNode: false
+            id: "around"
+            text: "You walked around the mountain and found a hidden cave."
+            choices: []

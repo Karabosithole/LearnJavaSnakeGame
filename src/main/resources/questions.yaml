@@ -1,6 +1,28 @@
-- text: "What is the capital of France?"
-  answer: "Paris"
-- text: "What is 2 + 2?"
-  answer: "4"
-- text: "Who wrote 'To be, or not to be'?"
-  answer: "Shakespeare"
+questions:
+  - id: "start"
+    text: "What is the keyword to define a class in Java?"
+    answer: "class"
+
+  - id: "left"
+    text: "Which method is the entry point of a Java application?"
+    answer: "main"
+
+  - id: "right"
+    text: "Which Java keyword is used to create an object?"
+    answer: "new"
+
+  - id: "swim"
+    text: "What does 'JVM' stand for?"
+    answer: "Java Virtual Machine"
+
+  - id: "walk"
+    text: "What is the parent class of all classes in Java?"
+    answer: "Object"
+
+  - id: "climb"
+    text: "What keyword is used to inherit a class in Java?"
+    answer: "extends"
+
+  - id: "around"
+    text: "What is the interface keyword used for?"
+    answer: "interface"

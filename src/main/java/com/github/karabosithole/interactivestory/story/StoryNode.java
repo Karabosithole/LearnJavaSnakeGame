@@ -12,13 +12,22 @@ package com.github.karabosithole.interactivestory.story;
 
 
 import java.util.List;
+import java.util.List;
 
 public class StoryNode {
+    private String id;
     private String text;
     private List<Choice> choices;
-    private boolean endNode; // Note the change here
 
     // Getters and setters
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getText() {
         return text;
@@ -34,13 +43,5 @@ public class StoryNode {
 
     public void setChoices(List<Choice> choices) {
         this.choices = choices;
-    }
-
-    public boolean isEndNode() { // No change needed here
-        return endNode;
-    }
-
-    public void setEndNode(boolean endNode) { // No change needed here
-        this.endNode = endNode;
     }
 }

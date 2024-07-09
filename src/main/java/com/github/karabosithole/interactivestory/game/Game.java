@@ -1,6 +1,7 @@
 package com.github.karabosithole.interactivestory.game;
 
 
+import com.github.karabosithole.interactivestory.question.Question;
 import com.github.karabosithole.interactivestory.story.*;
 import com.github.karabosithole.interactivestory.story.StoryNode;
 import org.yaml.snakeyaml.Yaml;
@@ -27,23 +28,66 @@ import com.github.karabosithole.interactivestory.ui.ConsoleUI;
 import java.io.File;
 import java.io.IOException;
 
+
+
 public class Game {
-    private UserInterface ui;
     private StoryNode currentNode;
+    private QuestionBank questionBank;
+    private UserInterface ui;
 
     public Game() {
-        this.ui = new ConsoleUI();
-        this.currentNode = Utilities.loadInitialStoryNode();
+        ui = new ConsoleUI();
+        loadStory("src/main/resources/story-data.yaml");
+        loadQuestions("src/main/resources/questions.yaml");
+    }
+
+    private void loadStory(String filePath) {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        try {
+            currentNode = mapper.readValue(new File(filePath), StoryNode.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadQuestions(String filePath) {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        try {
+            questionBank = mapper.readValue(new File(filePath), QuestionBank.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void start() {
-        while (!currentNode.isEndNode()) {
-            ui.displayText(currentNode.getText());
-            ui.displayChoices(currentNode.getChoices());
-            int choiceIndex = ui.getChoice(currentNode.getChoices().size());
-            currentNode = currentNode.getChoices().get(choiceIndex).getNextNode();
+        ui.displayMessage("Welcome to TeachMeJava!");
+
+        while (currentNode != null) {
+            ui.displayMessage(currentNode.getText());
+
+            if (!currentNode.getChoices().isEmpty()) {
+                int choiceIndex = ui.getUserChoice(currentNode.getChoices());
+                currentNode = currentNode.getChoices().get(choiceIndex).getNextNode();
+            } else {
+                break; // End of the story
+            }
+
+            // Ask the corresponding question after making the choice
+            Question question = questionBank.getQuestionById(currentNode.getId());
+            if (question != null) {
+                boolean correct = ui.askQuestion(question);
+                while (!correct) {
+                    ui.displayMessage("Incorrect answer. Try again.");
+                    correct = ui.askQuestion(question);
+                }
+            }
         }
-        ui.displayText(currentNode.getText());
-        ui.displayText("The End.");
+
+        ui.displayMessage("The End.");
+    }
+
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.start();
     }
 }

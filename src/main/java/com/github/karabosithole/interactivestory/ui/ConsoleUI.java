@@ -15,28 +15,28 @@ public class ConsoleUI implements UserInterface {
     private Scanner scanner;
 
     public ConsoleUI() {
-        this.scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
     }
 
     @Override
-    public void displayText(String text) {
-        System.out.println(text);
+    public void displayMessage(String message) {
+        System.out.println(message);
     }
 
     @Override
-    public void displayChoices(List<Choice> choices) {
+    public boolean askQuestion(Question question) {
+        System.out.println(question.getText());
+        String userAnswer = scanner.nextLine();
+        return userAnswer.equalsIgnoreCase(question.getAnswer());
+    }
+
+    @Override
+    public int getUserChoice(List<Choice> choices) {
         for (int i = 0; i < choices.size(); i++) {
             System.out.println((i + 1) + ". " + choices.get(i).getText());
         }
-    }
-
-    @Override
-    public int getChoice(int numChoices) {
-        int choice = -1;
-        while (choice < 1 || choice > numChoices) {
-            System.out.print("Enter your choice: ");
-            choice = scanner.nextInt();
-        }
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
         return choice - 1;
     }
 }
