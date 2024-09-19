@@ -23,7 +23,7 @@ public class AdventureMazeGame {
     }
     public AdventureMazeGame(Character player, int mazeWidth, int mazeHeight) {
         this.player = player;
-        this.maze = new com.github.karabosithole.game.Maze(mazeWidth, mazeHeight);
+//        this.maze = new com.github.karabosithole.game.Maze(mazeWidth, mazeHeight);
         this.obstacles = new ArrayList<>();
         this.questions = new ArrayList<>();
         generateObstacles();

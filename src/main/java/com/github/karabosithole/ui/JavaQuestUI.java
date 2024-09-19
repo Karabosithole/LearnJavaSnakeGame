@@ -1,15 +1,17 @@
 package com.github.karabosithole.ui;
 
 // UI setup example
-import com.yourname.model.AdventureMazeGame;
-import com.yourname.model.Character;
-import com.yourname.service.GameService;
+import com.github.karabosithole.model.AdventureMazeGame;
+import com.github.karabosithole.model.Character;
+import com.github.karabosithole.service.GameService;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+//import static jdk.internal.org.jline.terminal.Terminal.MouseTracking.Button;
 
 public class JavaQuestUI extends Application {
     private AdventureMazeGame game;

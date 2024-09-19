@@ -27,6 +27,14 @@
             <version>2.13.0</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
+        </dependency>
+
+
         <!-- Jackson Dataformat YAML -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
