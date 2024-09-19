@@ -1,0 +1,43 @@
+package com.github.karabosithole.ui;
+
+// UI setup example
+import com.yourname.model.AdventureMazeGame;
+import com.yourname.model.Character;
+import com.yourname.service.GameService;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class JavaQuestUI extends Application {
+    private AdventureMazeGame game;
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("JavaQuest");
+
+        TextField nameField = new TextField();
+        nameField.setPromptText("Enter your character's name");
+
+        Button startButton = new Button("Start Game");
+        startButton.setOnAction(e -> {
+            String name = nameField.getText();
+            Character player = new Character(name, "Warrior"); // Default character type
+            game = new AdventureMazeGame(player, 10, 10);
+            game.startGame();
+        });
+
+        VBox layout = new VBox(10);
+        layout.getChildren().addAll(nameField, startButton);
+
+        Scene scene = new Scene(layout, 400, 300);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
