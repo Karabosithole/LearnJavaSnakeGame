@@ -49,8 +49,10 @@ public class Board extends JPanel implements ActionListener {
     private Image head; // Image for the snake's head
 
 //    private List<String> questions; // List of questions to ask
-
+    private boolean gamePaused = false; // Pause flag
     private QuestionManager questionManager; // Use composition
+    private Timer delayTimer;
+
     /**
      * Constructor to initialize the Board.
      */
@@ -175,13 +177,48 @@ public class Board extends JPanel implements ActionListener {
             dots++; // Increase snake length
             locateApple(); // Locate new apple
 
+            // Pause the game before showing the question
+            pauseGame();
+
             questionManager.displayQuestion();
+
+            // Start a delay before resuming the game
+            addResumeDelay();
 
 //            // Show a random question
 //            int randomIndex = (int) (Math.random() * questions.size());
 //            String question = questions.get(randomIndex);
 //            JOptionPane.showMessageDialog(this, question, "Java Question", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+
+    // Pause the game by stopping the timer
+    private void pauseGame() {
+        gamePaused = true;
+        timer.stop(); // Stop the timer to pause game updates
+    }
+
+    // Resume the game by restarting the timer
+    private void resumeGame() {
+        gamePaused = false;
+        timer.start(); // Restart the timer to continue game updates
+    }
+
+    // Add a delay before resuming the game
+    private void addResumeDelay() {
+        // Create a new Timer for a 1 second delay (1000ms)
+        delayTimer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // After 1 second, resume the game
+                resumeGame();
+                delayTimer.stop(); // Stop the delay timer
+            }
+        });
+
+        // Start the delay timer
+        delayTimer.setRepeats(false); // We want this to happen only once
+        delayTimer.start();
     }
 
     /**

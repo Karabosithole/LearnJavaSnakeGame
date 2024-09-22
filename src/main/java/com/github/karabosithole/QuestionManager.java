@@ -32,7 +32,7 @@ public class QuestionManager {
     // Display a question (could be customized further)
     public void displayQuestion() {
         String question = getRandomQuestion();
-        JOptionPane.showMessageDialog(null, question, "Java Question", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, question, "Interview Practice", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }
