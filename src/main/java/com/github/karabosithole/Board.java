@@ -48,8 +48,9 @@ public class Board extends JPanel implements ActionListener {
     private Image apple; // Image for the apple
     private Image head; // Image for the snake's head
 
-    private List<String> questions; // List of questions to ask
+//    private List<String> questions; // List of questions to ask
 
+    private QuestionManager questionManager; // Use composition
     /**
      * Constructor to initialize the Board.
      */
@@ -69,13 +70,15 @@ public class Board extends JPanel implements ActionListener {
         loadImages(); // Load images for the game
         initGame(); // Initialize the game state
 
+        questionManager = new QuestionManager();
+
         // Initialize questions
-        questions = new ArrayList<>();
-        questions.add("What does JVM stand for?");
-        questions.add("What is the difference between JDK and JRE?");
-        questions.add("What is a constructor in Java?");
-        questions.add("What is polymorphism?");
-        questions.add("What is an interface?");
+//        questions = new ArrayList<>();
+//        questions.add("What does JVM stand for?");
+//        questions.add("What is the difference between JDK and JRE?");
+//        questions.add("What is a constructor in Java?");
+//        questions.add("What is polymorphism?");
+//        questions.add("What is an interface?");
     }
 
     /**
@@ -158,6 +161,7 @@ public class Board extends JPanel implements ActionListener {
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics metr = getFontMetrics(small);
 
+        //question box shows
         g.setColor(Color.white); // Set color for text
         g.setFont(small); // Set font for text
         g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 2); // Center the message
@@ -171,10 +175,12 @@ public class Board extends JPanel implements ActionListener {
             dots++; // Increase snake length
             locateApple(); // Locate new apple
 
-            // Show a random question
-            int randomIndex = (int) (Math.random() * questions.size());
-            String question = questions.get(randomIndex);
-            JOptionPane.showMessageDialog(this, question, "Java Question", JOptionPane.INFORMATION_MESSAGE);
+            questionManager.displayQuestion();
+
+//            // Show a random question
+//            int randomIndex = (int) (Math.random() * questions.size());
+//            String question = questions.get(randomIndex);
+//            JOptionPane.showMessageDialog(this, question, "Java Question", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
