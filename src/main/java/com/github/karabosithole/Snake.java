@@ -3,8 +3,6 @@ package com.github.karabosithole;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
-import javax.swing.*;
-import java.awt.*;
 
 /**
  * The Snake class represents the main window for the Snake game.
@@ -15,6 +13,7 @@ public class Snake extends JFrame {
     /**
      * Constructor to initialize the Snake game UI.
      */
+
     public Snake() {
         initUI(); // Initialize the user interface
     }
