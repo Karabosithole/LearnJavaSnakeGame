@@ -3,6 +3,7 @@
 ## Overview
 The Snake Game is a fun and interactive project developed in Java, where players control a snake to eat apples and answer trivia questions after each successful catch. This project was designed to reinforce my Java skills through hands-on practice while creating an engaging and educational game.
 
+For more details, you can also check out the project’s [README file](https://github.com/Karabosithole/LearnJavaSnakeGame).
 ---
 
 ## Project Motivation
