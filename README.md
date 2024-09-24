@@ -3,6 +3,8 @@
 ## Overview
 This is a simple multiple-choice quiz game built in Java using the Swing framework. The game randomly selects a question from a pool of Java-related questions and presents it to the user along with four possible answers. The user must choose the correct answer from the options presented. Immediate feedback is given on whether the answer is correct or incorrect.
 
+For detailed documentation and project motivation, visit the [Wiki Home](https://github.com/Karabosithole/LearnJavaSnakeGame). 
+
 ## Features
 - Multiple-choice questions related to Java programming.
 - Random question selection from a pool of predefined questions.

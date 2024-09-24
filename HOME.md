@@ -9,7 +9,7 @@ For more details, you can also check out the project’s [README file](https://g
 ## Project Motivation
 
 ### Why I Did the Project
-I created the Snake Game primarily to learn Java by practicing through an actual project. As someone with ADHD, I find that hands-on, interactive learning works best for me, so developing a game allowed me to make the learning process fun and effective. My goal was to deepen my understanding of Java concepts while simultaneously creating an enjoyable experience.
+I created the Snake Game primarily to learn Java by practicing through an actual project. I find that hands-on, interactive learning works best for me, so developing a game allowed me to make the learning process fun and effective. My goal was to deepen my understanding of Java concepts while simultaneously creating an enjoyable experience.
 
 ### Target Audience
 This game is aimed at casual gamers and trivia enthusiasts who enjoy quick, fun games that also challenge their knowledge. It could also be useful for educators seeking innovative ways to engage students with learning through gamification.
