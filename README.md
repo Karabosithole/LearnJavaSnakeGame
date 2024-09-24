@@ -62,7 +62,3 @@ Questions.add(new Question("Your custom question?",
 
 ## Credits
 Created by Karabo Sithole.
-
----
-
-You can modify the content and add any extra sections as needed (e.g., testing, contributing, etc.) depending on the scope of the project.
