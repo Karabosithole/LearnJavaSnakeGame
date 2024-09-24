@@ -87,4 +87,4 @@ While the Snake Game is fully functional, I see a few areas for potential enhanc
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/snake-game.git
+   git clone https://github.com/karabosithole/snake-game.git
