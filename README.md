@@ -1,7 +1,3 @@
-Here’s a basic README file you can use for your multiple-choice quiz game. It includes sections like installation, usage, features, and credits.
-
----
-
 # Java Multiple-Choice Quiz Game
 
 ## Overview
