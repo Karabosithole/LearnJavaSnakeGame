@@ -15,6 +15,29 @@ I created the Snake Game primarily to learn Java by practicing through an actual
 This game is aimed at casual gamers and trivia enthusiasts who enjoy quick, fun games that also challenge their knowledge. It could also be useful for educators seeking innovative ways to engage students with learning through gamification.
 
 ---
+### Realization: Running Java on the Web
+
+Initially, I designed the Snake Game in **Java** using the Swing framework. However, I soon realized that Java applications, especially ones built with Swing for a graphical user interface, cannot be run directly on a website due to browser limitations. Modern browsers do not support running Java applets or Swing-based applications natively, meaning users would have to download the game to run it locally.
+
+#### Pivot to JavaScript
+
+To offer a more seamless user experience where visitors could play the Snake Game directly on my portfolio site, I decided to recreate the game using **JavaScript**, **HTML**, and **CSS**. By doing this, users can play the game directly in their browser without needing to download anything.
+
+This transition involved learning how to recreate the core mechanics of the game in a web-friendly format while maintaining the same interactive gameplay. The new browser-based version of the Snake Game ensures ease of access for users and allows it to be embedded directly on my portfolio site.
+
+---
+
+### Technologies Used
+
+- **Java**: Original implementation of the Snake Game (downloadable version).
+- **JavaScript/HTML/CSS**: Rewritten version for browser playability.
+
+---
+
+### Future Plans
+
+- Continue supporting both versions of the Snake Game: one for download (Java) and one for browser play (JavaScript).
+- Explore other technologies to potentially expand the game's accessibility to more platforms.
 
 ## Learning Objectives
 In this project, I focused on achieving several learning goals:

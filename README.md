@@ -1,4 +1,37 @@
-# Java Multiple-Choice Quiz Game
+# Java Multiple-Choice Quiz Game & Snake Game (Java and JavaScript)
+
+## Overview
+
+This repository contains two projects:
+- A **Multiple-Choice Quiz Game** built in Java using the Swing framework.
+- A **Snake Game**, originally developed in Java, with a new version that can be played directly in the browser using JavaScript.
+
+Both projects aim to provide fun and educational experiences for users while showcasing Java programming concepts.
+
+For detailed documentation and project motivation, visit the [Wiki Home](https://github.com/Karabosithole/LearnJavaSnakeGame).
+
+---
+
+## Projects in This Repository
+
+### 1. Multiple-Choice Quiz Game (Java)
+
+**Overview**:  
+This is a simple multiple-choice quiz game built in Java using the Swing framework. The game randomly selects a Java-related question and presents it to the user along with four possible answers.
+
+- **Features**: Random question selection, immediate feedback, easy to extend with new questions.
+- **Technologies Used**: Java, Swing (for GUI).
+
+**Installation**:
+1. Prerequisites: Java 8+ and a Java IDE or command-line tools.
+2. Clone the repository and compile the code:
+   ```bash
+   git clone https://github.com/your-username/java-multiple-choice-quiz.git
+   javac com/github/karabosithole/Main.java
+   java com.github.karabosithole.Main
+
+
+# Java Multiple-Choice Quiz Game (Java)
 
 ## Overview
 This is a simple multiple-choice quiz game built in Java using the Swing framework. The game randomly selects a question from a pool of Java-related questions and presents it to the user along with four possible answers. The user must choose the correct answer from the options presented. Immediate feedback is given on whether the answer is correct or incorrect.
