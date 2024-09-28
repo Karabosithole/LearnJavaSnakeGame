@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple-Choice Quiz Game</title>
+    <title>Snake Game with Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
-    <h1>Java Quiz Game</h1>
-    <div id="question"></div>
-    <div id="answers"></div>
+    <h1>Snake Game with Quiz</h1>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="question" style="display:none;"></div>
+    <div id="answers" style="display:none;"></div>
     <div id="feedback"></div>
     <button id="next" style="display:none;">Next Question</button>
 </div>
-<script src="game.js"></script> <!-- Updated to game.js -->
+<script src="game.js"></script>
 </body>
 </html>
 

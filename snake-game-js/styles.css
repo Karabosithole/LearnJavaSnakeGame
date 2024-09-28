@@ -13,10 +13,13 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h1 {
-    text-align: center;
+canvas {
+    background: #000;
+    display: block;
+    margin: 20px auto;
 }
 
 button {
