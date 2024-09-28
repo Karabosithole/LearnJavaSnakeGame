@@ -25,6 +25,11 @@ let gameCanvas = document.getElementById("gameCanvas");
 let ctx = gameCanvas.getContext("2d");
 let box = 20;
 let d;
+let gameSpeed = 200; // Adjust the speed of the game (lower is faster)
+let game;
+
+// Control whether the game is paused
+let isPaused = false;
 
 document.addEventListener("keydown", direction);
 
@@ -41,6 +46,8 @@ function direction(event) {
 }
 
 function draw() {
+    if (isPaused) return; // Pause the game if isPaused is true
+
     ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
     for (let i = 0; i < snake.length; i++) {
         ctx.fillStyle = (i === 0) ? "green" : "white";
@@ -92,6 +99,7 @@ function collision(x, y, snake) {
 
 // Display question when snake eats apple
 function displayQuestion() {
+    isPaused = true; // Pause the game
     const questionElement = document.getElementById('question');
     const answersElement = document.getElementById('answers');
     const feedbackElement = document.getElementById('feedback');
@@ -142,8 +150,8 @@ document.getElementById('next').onclick = () => {
     answersElement.style.display = 'none';
     document.getElementById('feedback').textContent = ''; // Clear feedback
 
-    draw(); // Continue the game
+    isPaused = false; // Resume the game
 };
 
 // Start the game
-let game = setInterval(draw, 100);
+game = setInterval(draw, gameSpeed);
